@@ -26,4 +26,13 @@ document.querySelector(".addTask")!.addEventListener('click', ()=> {
 function createTask(task: Task) {
     tasks.push(task);
     console.log(tasks)
+    updateTaskList();
+}
+
+function updateTaskList(){
+    let taskListHTML = '';
+    tasks.forEach(task =>{
+        taskListHTML += `<li>${task.name} - Status: ${task.status}</li>`;
+    })
+    document.querySelector(".taskList")!.innerHTML = taskListHTML;
 }
