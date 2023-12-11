@@ -1,10 +1,4 @@
-"use strict";
-var TaskStatus;
-(function (TaskStatus) {
-    TaskStatus[TaskStatus["Todo"] = 0] = "Todo";
-    TaskStatus[TaskStatus["InProgress"] = 1] = "InProgress";
-    TaskStatus[TaskStatus["Done"] = 2] = "Done";
-})(TaskStatus || (TaskStatus = {}));
+import { TaskStatus } from "./types/TaskStatus.js";
 let tasks = [];
 document.querySelector(".addTask").addEventListener('click', () => {
     const taskNameInput = document.querySelector(".taskName");

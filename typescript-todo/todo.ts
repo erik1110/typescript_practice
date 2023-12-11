@@ -1,13 +1,5 @@
-interface Task {
-    name: string,
-    status: TaskStatus
-}
-
-enum TaskStatus {
-    Todo,
-    InProgress,
-    Done
-}
+import { Task } from "./types/Task.js";
+import { TaskStatus } from "./types/TaskStatus.js";
 
 let tasks: Task[] = [];
 
@@ -32,7 +24,7 @@ function createTask(task: Task) {
 function updateTaskList(){
     let taskListHTML = '';
     tasks.forEach(task =>{
-        taskListHTML += `<li>${task.name} - Status: ${task.status}</li>`;
+        taskListHTML += `<li>${task.name} - Status: ${TaskStatus[task.status]}</li>`;
     })
     document.querySelector(".taskList")!.innerHTML = taskListHTML;
 }
